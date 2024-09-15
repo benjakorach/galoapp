@@ -127,14 +127,14 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Lo que dicen nuestros usuarios</h2>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <TestimonialCard
-                name="María García"
-                role="Emprendedora"
-                content="Galo me ayudó completamente a manejar mis tareas diarias. ¡Es como tener un asistente personal adentro de WhatsApp!"
+                name="Juan Lazo"
+                role="Project Manager"
+                content="Galo me ayudó completamente a poder saber qué dicen los audios cuando estoy en calls y no puedo escuchar. ¡Es un alivio!"
               />
               <TestimonialCard
-                name="Carlos Rodríguez"
-                role="Gerente de Proyectos"
-                content="La sincronización con Google Calendar me resuelve la vida. Galo es una herramienta increíble."
+                name="Sofía Volanti"
+                role="CMO"
+                content="La sincronización con Google Calendar me resuelve la vida, pasar de un recordatorio de WhatsApp a Calendar es un cambio de un click. Galo es una herramienta increíble."
               />
               <TestimonialCard
                 name="Ana Martínez"
