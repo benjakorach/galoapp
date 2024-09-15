@@ -3,9 +3,10 @@ import { useCallback, useState } from 'react';
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquare, Mic, Calendar, Bell, Star, ChevronDown, ChevronUp } from "lucide-react";
+import { MessageSquare, Mic, Calendar, Bell, ChevronDown, ChevronUp } from "lucide-react";
 import { useRef } from 'react';
 import Image from 'next/image';
+
 // Interfaz para las props de FeatureCard
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -43,7 +44,6 @@ export default function Home() {
     }
   };
 
-
   const scrollToTop = useCallback(() => {
     const scrollStep = -window.scrollY / (500 / 15);
     const scrollInterval = setInterval(() => {
@@ -78,7 +78,6 @@ export default function Home() {
       {/* Sección Principal */}
       <main className="flex-grow pt-20">
         <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-green-100 to-white">
-
           
           <div className="relative mb-6" style={{ width: '300px', height: '300px' }}>
             <Image src="/Galo3.png" alt="Galo Logo" layout="fill" objectFit="contain" />
@@ -94,33 +93,34 @@ export default function Home() {
             </Button>
           </a>
         </section>
+
         <section ref={featuresRef} id="features" className="py-20 bg-white">
-          <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Características</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <FeatureCard
-                icon={<Mic className="w-6 h-6 text-blue-500" />}
-                title="Transcripción de audio"
-                description="Convierte tus mensajes de voz en texto fácilmente"
-              />
-              <FeatureCard
-                icon={<Bell className="w-6 h-6 text-green-500" />}
-                title="Recordatorios"
-                description="Agenda y recibe recordatorios importantes"
-              />
-              <FeatureCard
-                icon={<Calendar className="w-6 h-6 text-purple-500" />}
-                title="Sincronización de calendario"
-                description="Mantén tus eventos sincronizados automáticamente"
-              />
-              <FeatureCard
-                icon={<MessageSquare className="w-6 h-6 text-yellow-500" />}
-                title="Chat inteligente"
-                description="Interactúa con una IA avanzada para resolver tus dudas"
-              />
-            </div>
-          </div>
-        </section>
+  <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Características</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
+      <FeatureCard
+        icon={<Mic className="w-16 h-16 text-green-900" />}
+        title="Transcripción de audio"
+        description="Convierte tus mensajes de voz en texto fácilmente"
+      />
+      <FeatureCard
+        icon={<Bell className="w-16 h-16 text-green-900" />}
+        title="Recordatorios"
+        description="Agenda y recibe recordatorios importantes"
+      />
+      <FeatureCard
+        icon={<Calendar className="w-16 h-16 text-green-900" />}
+        title="Sincronización de calendario"
+        description="Mantén tus eventos sincronizados automáticamente"
+      />
+      <FeatureCard
+        icon={<MessageSquare className="w-16 h-16 text-green-900" />}
+        title="Chat inteligente"
+        description="Interactúa con una IA avanzada para resolver tus dudas"
+      />
+    </div>
+  </div>
+</section>
 
         <section ref={testimonialsRef} id="testimonials" className="py-20 bg-gray-50">
           <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,30 +146,61 @@ export default function Home() {
         </section>
 
         <section ref={faqRef} id="faq" className="py-20 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Preguntas frecuentes</h2>
-            <div className="space-y-4">
-              <FaqItem
-                question="¿Cómo puedo empezar a usar Galo?"
-                answer="Para comenzar a usar Galo, simplemente agrega nuestro número de WhatsApp a tus contactos y envía un mensaje. Te guiaremos a través del proceso de configuración."
-                isOpen={openFaq === 0}
-                toggle={() => toggleFaq(0)}
-              />
-              <FaqItem
-                question="¿Es seguro usar Galo con mi información personal?"
-                answer="Sí, la seguridad de tus datos es nuestra prioridad. Utilizamos encriptación de extremo a extremo y no almacenamos información sensible."
-                isOpen={openFaq === 1}
-                toggle={() => toggleFaq(1)}
-              />
-              <FaqItem
-                question="¿Puedo usar Galo en múltiples dispositivos?"
-                answer="Sí, Galo se sincroniza con tu cuenta de WhatsApp, por lo que puedes usarlo en cualquier dispositivo donde tengas WhatsApp instalado."
-                isOpen={openFaq === 2}
-                toggle={() => toggleFaq(2)}
-              />
-            </div>
-          </div>
-        </section>
+  <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Preguntas frecuentes</h2>
+    <div className="space-y-4">
+      <FaqItem
+        question="¿Cómo puedo empezar a usar Galo?"
+        answer="Para comenzar a usar Galo, simplemente agrega nuestro número de WhatsApp a tus contactos y envía un mensaje. Te guiaremos a través del proceso de configuración."
+        isOpen={openFaq === 0}
+        toggle={() => toggleFaq(0)}
+      />
+      <FaqItem
+        question="¿Es seguro usar Galo con mi información personal?"
+        answer="Sí, la seguridad de tus datos es nuestra prioridad. Utilizamos encriptación de extremo a extremo y no almacenamos información sensible."
+        isOpen={openFaq === 1}
+        toggle={() => toggleFaq(1)}
+      />
+      <FaqItem
+        question="¿Puedo usar Galo en múltiples dispositivos?"
+        answer="Sí, Galo se sincroniza con tu cuenta de WhatsApp, por lo que puedes usarlo en cualquier dispositivo donde tengas WhatsApp instalado."
+        isOpen={openFaq === 2}
+        toggle={() => toggleFaq(2)}
+      />
+      {/* Nuevas preguntas frecuentes añadidas */}
+      <FaqItem
+        question="¿Puedo sincronizar Galo con otras aplicaciones además de Google Calendar?"
+        answer="Por ahora, solo Google Calendar está en camino de ser integrado. Dentro de poco podrás sincronizar Galo con Google Calendar, permitiéndote mantener tus eventos organizados."
+        isOpen={openFaq === 3}
+        toggle={() => toggleFaq(3)}
+      />
+      <FaqItem
+        question="¿Galo guarda mis conversaciones o audios?"
+        answer="No, Galo no almacena ninguna conversación ni audio. Todo el procesamiento está 100% encriptado, y no tenemos acceso a tus conversaciones, a diferencia de algunos competidores."
+        isOpen={openFaq === 4}
+        toggle={() => toggleFaq(4)}
+      />
+      <FaqItem
+        question="¿Cuánto tiempo tarda Galo en responder a mis solicitudes?"
+        answer="El tiempo de respuesta depende del estado de las API's de la inteligencia artificial. Por nuestro lado, todo está 100% optimizado, pero pueden ocurrir latencias en casos puntuales."
+        isOpen={openFaq === 5}
+        toggle={() => toggleFaq(5)}
+      />
+      <FaqItem
+        question="¿Qué tipo de audio puede transcribir Galo?"
+        answer="Para que Galo pueda transcribir un audio, es necesario que sea un audio reenviado."
+        isOpen={openFaq === 6}
+        toggle={() => toggleFaq(6)}
+      />
+      <FaqItem
+        question="¿Puedo agregar varias tareas o recordatorios en una sola solicitud?"
+        answer="Sí, Galo puede procesar múltiples tareas o recordatorios en una sola solicitud, simplemente asegúrate de separarlos con una frase clara para que entienda cada uno correctamente."
+        isOpen={openFaq === 7}
+        toggle={() => toggleFaq(7)}
+      />
+    </div>
+  </div>
+</section>
 
 
         <section ref={contactRef} id="contact" className="py-20 bg-gray-50">
@@ -227,16 +258,16 @@ export default function Home() {
   );
 }
 
+// Componente actualizado de FeatureCard
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <CardContent className="p-6">
-        <div className="flex items-center mb-4">
+    <Card className="bg-gradient-to-b from-green-200 to-green-300 shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 rounded-xl p-8 h-72">
+      <CardContent className="flex flex-col items-center justify-center text-center">
+        <div className="mb-4">
           {icon}
-          {/* Ajusta el color del título a negro */}
-          <h3 className="text-xl font-semibold ml-3 text-black">{title}</h3>
         </div>
-        <p className="text-gray-600">{description}</p>
+        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+        <p className="text-gray-600 mt-2">{description}</p>
       </CardContent>
     </Card>
   );
@@ -247,16 +278,12 @@ function TestimonialCard({ name, role, content }: TestimonialCardProps) {
     <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardContent className="p-6">
         <div className="flex items-center mb-4">
-          <Star className="w-5 h-5 text-yellow-400" />
-          <Star className="w-5 h-5 text-yellow-400" />
-          <Star className="w-5 h-5 text-yellow-400" />
-          <Star className="w-5 h-5 text-yellow-400" />
-          <Star className="w-5 h-5 text-yellow-400" />
+          <MessageSquare className="w-5 h-5 text-yellow-400" />
         </div>
         <p className="text-gray-600 mb-4">{content}</p>
         <div>
           <p className="font-semibold text-black">{name}</p>
-          <p className="font-i text-gray-500 mb-4">{role}</p>
+          <p className="text-gray-500">{role}</p>
         </div>
       </CardContent>
     </Card>
