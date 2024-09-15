@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Mic, Calendar, Bell, Star, ChevronDown, ChevronUp } from "lucide-react";
 import { useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 // Interfaz para las props de FeatureCard
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -44,10 +43,6 @@ export default function Home() {
     }
   };
 
-  const eyeVariants = {
-    start: { x: -2 },
-    end: { x: 2 },
-  };
 
   const scrollToTop = useCallback(() => {
     const scrollStep = -window.scrollY / (500 / 15);
