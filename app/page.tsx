@@ -3,10 +3,9 @@ import { useCallback, useState } from 'react';
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { MessageSquare, Mic, Calendar, Bell, Star , ChevronDown, ChevronUp} from "lucide-react";
-import { useRef, RefObject } from 'react';
-
+import { useRef} from 'react';
+import Image from 'next/image';
 // Interfaz para las props de FeatureCard
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -44,15 +43,6 @@ export default function Home() {
     }
   };
 
-  const scrollToSection = (elementRef: RefObject<HTMLElement>) => {
-    if (elementRef.current) {
-      window.scrollTo({
-        top: elementRef.current.offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   const scrollToTop = useCallback(() => {
     const scrollStep = -window.scrollY / (500 / 15);
     const scrollInterval = setInterval(() => {
@@ -71,7 +61,7 @@ export default function Home() {
   <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
     {/* Logo con imagen */}
     <button onClick={scrollToTop} className="flex items-center">
-      <img src="/logo.jpeg" alt="Galo Logo" className="w-10 h-10 rounded-full mr-2" />
+    <Image src="/logo.jpeg" alt="Galo Logo" width={40} height={40} className="rounded-full mr-2" />
       <span className="text-2xl font-bold text-gray-800">Galo</span>
     </button>
 
