@@ -62,7 +62,7 @@ export default function Home() {
         <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           {/* Logo con imagen */}
           <button onClick={scrollToTop} className="flex items-center">
-            <Image src="/Galo2.webp" alt="Galo Logo" width={40} height={40} className="rounded-full mr-2" />
+            <Image src="/Galo2.png" alt="Galo Logo" width={40} height={40} className="rounded-full mr-2" />
             <span className="text-2xl font-bold text-gray-800">Galo</span>
           </button>
 
