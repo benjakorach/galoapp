@@ -62,7 +62,7 @@ export default function Home() {
         <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           {/* Logo con imagen */}
           <button onClick={scrollToTop} className="flex items-center">
-            <Image src="/Galo2.png" alt="Galo Logo" width={40} height={40} className="rounded-full mr-2" />
+            <Image src="/Galo3.png" alt="Galo Logo" width={40} height={40} className="rounded-full mr-2 object-none" />
             <span className="text-2xl font-bold text-gray-800">Galo</span>
           </button>
 
@@ -78,9 +78,9 @@ export default function Home() {
       {/* Sección Principal */}
       <main className="flex-grow pt-20">
         <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-green-100 to-white">
-          
-          <div className="relative mb-6" style={{ width: '300px', height: '300px' }}>
-            <Image src="/Galo3.png" alt="Galo Logo" layout="fill" objectFit="contain" />
+
+          <div className="relative mb-6 rounded-full" style={{ width: '300px', height: '300px' }}>
+            <Image src="/Galo3.png" alt="Galo Logo" className='rounded-full object-none' fill />
           </div>
 
           <h1 className="text-6xl font-bold text-gray-800 mb-4">Galo</h1>
